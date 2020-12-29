@@ -1,20 +1,36 @@
-#Pacman Game
-#Directions to the game code:
+void gotoxy(short x, short y)        // function for setting the initial position of the pacman and the enemy
+{	
+  HANDLE hStdout = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD position = {y, x};
+	SetConsoleCursorPosition(hStdout, position);
+}
 
-*Hi everyone my name is Hammad Rashid and this document is here to help you with one of the most basic games in c++, that is Pacman*
-*I am currently doing my CS from NUCES, in second year.*
+void Food(char map[14][24])             // function for setting the food in the map
+{
+	for( int a = 0; a < 14; a++ )
+	{
+		for( int b = 0; b < 24; b++ )
+		{
+			if( map[a][b] == ' ' )
+			{
+				if((b % 2 == 1 ) && ( a % 2 == 1 ))
+				{
+				      map[a][b] = '.';
+				}
+			}
+		}
+	}
+}
 
-*The main purpose of this document is to 
-provide a brief help for those who want  to make this game*
-
-Functions to be used in the game:
-
-1. gotoxy function: This function is used for    setting the position of the cursor on the    screen and is used to move the cursor     on the screen.
-
-2. Food function: This function prints the food or maybe the source of points for the player. It considers the locations on the map by dealing with the rows and columns and then  printing the dot on the screen in the map.
-
-3. Display map: This function is used to display the map on the screen.
-
-4. system("cls") is used to clear the screen
-
-5. srand time is used to genrate the movement of the enemy randomly
+void display_Map(char map[14][24])       // function for displaying map
+{
+    for( int i = 0; i < 14; i++ )
+    {
+        for( int j = 0; j < 24; j++ )       // using nested loop as it is a 2D array
+        {
+            cout << map[i][j];
+        }
+        cout << endl;
+    }
+    cout << endl;
+}
