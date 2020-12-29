@@ -29,7 +29,7 @@ int main()                       // main function
   
   for( int x = 0; x < 5000; x++ )
   {
-		int haye = rand() % 4 + 1;
+    int haye = rand() % 4 + 1;
     h = getch();      // setting the movement of pacman
     
     if( h == 's')  // down
@@ -104,7 +104,7 @@ int main()                       // main function
 		system("cls");
 		display_Map(map);      // display map
 		gotoxy(Cx, Cy );       // set the pacman
-    cout << "H" << endl;
+                cout << "H" << endl;
 		gotoxy(E1x, E1y);      // set the enemy
 		cout << "@";
 		gotoxy(14, 2);         // set the coordinates for the word score
