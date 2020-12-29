@@ -1,7 +1,17 @@
+#include <iostream>                // header files
+#include <conio.h>
+#include <map>
+#include <windows.h>
+#include <ctime>
+using namespace std;
+
 int main()                       // main function
 {
-	int score = 0;               // variable for calculating the score
+
+	int score = 0;  // variable for calculating the score
+  
   char h;                      // character variable
+  
   char map[14][24] =           // character array map to show the map where there are 14 rows and 24 coloumns
     {
         "_______________________",
@@ -18,9 +28,10 @@ int main()                       // main function
     "|                     |",
 		"+---------GAME--------+",
     };
+    
 	cout << "PAC-MAN " << endl;
+  
   system("cls");                 // clearing the system
-	
   Food(map);                     // calling the function of food
   display_Map(map);              // calling the map function in main
   int Cx = 11, Cy = 21;          // setting the psoition of the pacman
@@ -28,7 +39,9 @@ int main()                       // main function
 	srand(time(0));
   
   for( int x = 0; x < 5000; x++ )
+  
   {
+  
     int haye = rand() % 4 + 1;
     h = getch();      // setting the movement of pacman
     
