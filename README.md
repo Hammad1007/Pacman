@@ -1,8 +1,17 @@
+#include <iostream>                // header files
+#include <conio.h>
+#include <map>
+#include <windows.h>
+#include <ctime>
+using namespace std;
+
 void gotoxy(short x, short y)        // function for setting the initial position of the pacman and the enemy
+
 {	
   HANDLE hStdout = GetStdHandle(STD_OUTPUT_HANDLE);
 	COORD position = {y, x};
 	SetConsoleCursorPosition(hStdout, position);
+	
 }
 
 void Food(char map[14][24])             // function for setting the food in the map
